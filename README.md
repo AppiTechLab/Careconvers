@@ -61,6 +61,42 @@ The frontend is a Vue.js single-page application. Integrate `frontend/src/views/
 2. Ensure `VITE_API_URL` is set in your frontend `.env` (default: `http://localhost:3000/api`).
 3. The TalkingHead avatar requires `@/assets/js/talkinghead.mjs` — place the asset file at `frontend/src/assets/js/talkinghead.mjs`.
 
+## Docker
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Steps
+
+1. Copy the example environment file and fill in your API keys:
+
+   ```bash
+   cp backend/.env.example backend/.env
+   # Edit backend/.env with your actual API keys
+   ```
+
+2. Build and start the backend:
+
+   ```bash
+   docker compose up --build -d
+   ```
+
+3. View logs:
+
+   ```bash
+   docker compose logs -f backend
+   ```
+
+4. Stop the backend:
+
+   ```bash
+   docker compose down
+   ```
+
+The backend will be available at `http://localhost:3001`.
+
 ## Scenario Overview
 
 **Patient:** Madame Aubrey, Denise — born 14.05.1940  
